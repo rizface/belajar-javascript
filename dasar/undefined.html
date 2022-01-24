@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undefined</title>
+</head>
+<body>
+    <script>
+        // ini akan bernilai undefined, undefined adalah variable yang nilainya belum di definisikan, atau object yang key nya belum di definisikan, atau array yang index nya belum di definisikan.
+        let name;
+        console.log(name);
+        console.log(name == undefined);
+
+        let animals = [];
+        console.log(animals[0]); // undefined
+        console.log(animals[0] == undefined);
+
+        let human = {};
+        console.log(human.gender);
+        console.log(human.gender == undefined);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            aturan penggunaan
+            1. rest parameter hanya boleh ada satu di setiap function
+            2. jika ada lebih dari 1 parameter dalam 1 function, maka rest parameter harus menjadi parameter paling terakhir
+        */
+        // rest parameter
+        function favorites(...favorites) {
+            console.log(favorites); // ini sama dengan favoriters.Join(" ")
+            console.log(...favorites); // ini sama dengan favoriters.Join(" ")
+        }
+        favorites("coding", "eat", "sleep", "youtube");
+        let favs = ["eat", "code", "sleep", "repeat"];
+        favorites(...favs) // ini sama dengan favorites("eat", "code", "sleep", "repeat");
+
+        // NOTE : Cara dibawah sangat tidak dianjurkan
+        function oldSum() {
+            console.log(arguments);
+        }
+        oldSum(1,2,3,4,5,6,7)
+    </script>
+</body>
+</html>

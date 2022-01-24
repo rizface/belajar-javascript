@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = {
+            firstName: "Muhammad",
+            middleName: "Al",
+            lastName: "Farizzi",
+            get fullName() {
+                return `${this.firstName} ${this.middleName} ${this.lastName}`
+            }, // ini terlihat seperti function tapi waktu diakses bukan diakses dengan cara function tapi dengan cari akses property
+            set fullName(val){
+                let items = val.split(" ")
+                this.firstName = items[0]
+                this.middleName = items[1]
+                this.lastName = items[2]
+            }
+        }
+
+        console.log(person.fullName);
+        person.firstName = "Hi"
+        person.middleName = "Ma"
+        person.lastName = "Jime"
+        console.log(person.fullName);
+
+        person.fullName = "Hima Jime Lagi"
+        console.log(person.fullName);
+
+    </script>
+</body>
+</html>

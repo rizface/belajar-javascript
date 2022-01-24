@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi String Number</title>
+</head>
+<body>
+    <script>
+        const value1 = "1";
+        const value2 = 1;
+
+        let sum = value1 + value2; // the result is 11, coz number + string = string
+        console.info(sum);
+
+        // value1 menjadi integer
+        sum = parseInt(value1) + value2;
+        console.info(sum);
+
+        // value1 menjadi floating point
+        sum = parseFloat(value1) + value2;
+        console.info(sum);
+
+        sum = Number(value1) + value2;
+        console.info(sum);
+
+        // value2 menjadi "1" / string 1
+        sum = value1 + value2.toString()
+        console.info(sum);
+
+        // NaN, ini adalah hasil yang didapatkan jika melakukan konversi data "Fariz" ke number
+        let nama = "fariz";
+        let numberNama = parseInt(nama) // ini NaN
+        console.info(numberNama)
+
+        let a = "1Fariz"
+        let numberA = parseInt(a)
+        console.info(numberA) // ini akan menghasilkan 1, karena js mentolerir jika kesalahan menulis angka ada dibelakang (ini jika menggunakan parseInt atau parseFloat) tidak berlaku jika menggunakan Number
+
+        // NaN jika dioperasi kan dengan data apapun tetap akan menghasilkan NaN
+        let nan = isNaN(parseInt("Ini Pasti NaN"))
+        console.info(`isNaA : ${nan}`)
+</script>
+</body>
+</html>

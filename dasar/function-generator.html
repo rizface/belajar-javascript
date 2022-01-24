@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            function generator adalah function yang digunakan untuk membuat data generator
+            generator adalah data yang bisa di iterasi seperti array, untuk membuat function generator, kita perlu menambahkan tanda * (bintang) setelah kata function, dan untuk mengembalikan data di tiap iterasi, kita bisa gunakan kata kunci yield diikuti datanya;
+
+            yield sama seperti return, tapi tidak menghentikan function, jadi kode dibawahnya masih dieksekusi
+        */
+
+        function* createNames() {
+            for (let i = 0; i < 3; i++) {
+                if(i == 0) {
+                    yield "Muhammad";
+                } else if(i == 1) {
+                    yield "Al";
+                } else {
+                    yield "Farizzi";
+                }
+            }
+        }
+        let fullName = createNames();
+        /*
+            data dari function generator tidak bisa diakses langsung menggunakan index, hanya bisa di iterasi menggunakan for of
+        */ 
+       for (const iterator of fullName) {
+           console.log(iterator);
+       }
+
+       /*
+            data generator bersifat lazy, artinya jika data yang masih ada di iterator belum ditarik, maka data selanjutnya belum dikirim, jadi jika ada 3 yield maka, akan dikirim satu terlebih dahulu, jika yang terkirim sudah di konsum maka yield kedua baru akan dikirim, begitu seterusnya
+
+            EAGER -> dibuat semua dulu, baru bisa dipakai
+            LAZY -> dibuat satu dulu, setelah itu harus dipakai, setelah itu baru bikin lagi contohnya function generator
+
+       */
+
+       // contoh eager
+       function eager() {
+           let result = []
+           for (let i = 1; i <= 10; i++) {
+                console.log(`Eager ke ${i}`);
+                result.push(i);
+            }
+            return result
+       }
+       for (const item of  eager()) {
+            console.log(item);
+        }
+
+        // contoh lazy
+        function* lazy() {
+            for (let i = 1; i <= 10; i++) {
+                console.log(`Lazy ke ${i}`);
+                yield i;
+            }
+        }
+
+        let items = lazy()
+        for (const item of items) {
+            console.log(item);
+        }
+    </script>
+</body>
+</html>

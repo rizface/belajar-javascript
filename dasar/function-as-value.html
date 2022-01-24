@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sayHello(name) {
+            return name
+        }
+        let say = sayHello;
+        /*
+            sekarang sayHello bisa dipanggil dengan 5 cara
+        */ 
+
+        function giveMeName(callback) {
+            let name = callback("Fariz")
+            console.log(name);
+        }
+
+        // cara 1
+        console.log(say("Fariz"));
+
+        // cara 2
+        console.log(sayHello("Fariz"));
+        
+        //  cara 3
+        giveMeName(say)
+
+        // cara 4
+        giveMeName(sayHello)
+
+        // cara 5
+        giveMeName(function(name) {
+            return `Nama Saya Adalah ${name}`;
+        })
+    </script>
+</body>
+</html>

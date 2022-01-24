@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // globalScope bisa diakses dari mani saja
+        let globalScope = "global";
+
+        // function "local" ini berada di global scope
+        let local = function() {
+            // localScope hanya bisa diakses dari function ini saja, tapi globalScope bisa diakses dari sini
+            let localScope = "local"
+            console.log(localScope);
+        }
+
+        console.log(globalScope); // success
+        local()
+        console.log(localScope); // can not accesss localScope, because it not in global scope
+
+    </script>
+</body>
+</html>

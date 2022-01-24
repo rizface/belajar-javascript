@@ -1,0 +1,1 @@
+document.writeln("Hello From Another File")

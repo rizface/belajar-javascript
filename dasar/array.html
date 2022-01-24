@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        let arrayKosong = [];
+        let names = ["Muhammad", "Al", "Farizzi"];
+        
+        // tambah data ke paling belakang
+        names.push("Surya","Samsul","Imron")
+        console.table(names);
+
+        // akses data pada index tertentu
+        console.log(names[2]);
+
+        // mendapatkan panjang array
+        console.log(names.length);
+
+        // menghapus array pada index tertentu
+        delete names[0]; // menghapus dengan cara ini tidak akan menggeser index
+        console.table(names);
+
+        // menghapus data paling belakang
+        names.pop()
+        console.table(names);
+
+        // memasukan data dipaling depan
+        names.unshift("Muhammad")
+        console.table(names);
+
+        // menghapus data paling depan
+        names.shift()
+        console.table(names);
+
+        /*
+            saat menghapus data dari index, yang sebenarnya terjadi adalah saat menghapus data yang dihapus hanyalah datanya bukan indexnya, jadi jika data telah dihapus, tapi indexnya masih bisa digunakan, misalnya untuk assign nilai baru pada index tersebut
+        */ 
+</script>
+</body>
+</html>

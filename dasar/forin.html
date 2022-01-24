@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for-in ini akan mengembalikan index jika digunakan pada array
+        // for-in array
+        let names = ["jhon", "khannedy", "james", "phoeby"]
+        for (const index in names) {
+            console.log(index);
+        }
+
+        // for-in akan mengembalikan key / properties jika digunakan pada object
+        let person = {
+            name: "fariz",
+            address: "earth",
+            race: "human"
+        }
+        for (const prop in person) {
+            console.log(prop);
+            console.log(`${prop}: ${person[prop]}`);
+        }
+    </script>
+</body>
+</html>

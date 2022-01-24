@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeOf</title>
+</head>
+<body>
+    <script>
+        let name = "Fariz";
+        console.log(typeof(name)); // ini akan menampilkan "string" karena tipe data dari name adalah string
+
+        switch (typeof(name)) {
+            case "string":
+                console.log("variable name adalah \"string\"");
+                break;
+            default:
+                console.log("Selain Dari Pada number,string,function,symbol,boolean, dan bigint itu adalah object");
+                break;
+        }
+
+    </script>
+</body>
+</html>

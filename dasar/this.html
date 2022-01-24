@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            1. dalam object method this referensi ke object itu sendiri
+            2. dalam global scope atau function pada global scope. this akan mengacu pada window(browser)
+            3. dalam strict mode, this adalah undefined
+            4. dalam event, merujuk pada element yang menerima event
+        */
+
+        function wid() {
+            function inner(params) {
+                console.log("from window");
+                console.log(this);
+                console.log("end");
+            }   
+            inner() // window
+            return this
+        }
+
+        let person = {
+            name: "Fariz",
+            address: "Earth",
+            getName: function() {
+                return this.name;
+            },
+            getAddress: (earth) => {
+                /*
+                    dalam arrow function this mengacu pada window, bukan ke object itu sendiri (person)
+                */
+                return earth
+            }
+        }
+
+        console.log(this); // window
+        console.log(wid()); // window
+        console.log(person.getName()); // person.name
+        console.log(person.getAddress(person.address));
+   </script>
+</body>
+</html>

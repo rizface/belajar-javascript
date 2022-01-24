@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            kekurangan arrow function
+            - tidak memiliki fitur arguments object
+            - tidak bisa menggunakan function generator
+            - tidak bisa mengakses this
+            - tidak bisa mengakses super
+        */
+
+        // menggunakan block
+        const sayHello = (name) => {
+            return `Hello ${name}`
+        }
+        let greating = sayHello("Fariz")
+        console.log(greating);
+        
+        // tanpa block
+        /*
+            syarat menggunakan arrow function tanpa block, yaitu logic function bisa diselesaikan dalam satu baris
+        */
+        const sayHi = (name) => `Hai ${name} i am from indonesia`
+        /*
+            function diatas sama dengan ini
+            const sayHi = function(name) {
+                return `Hai ${name} i am from indonesia`
+            }
+        */
+        greating = sayHi("Fariz")
+        console.log(greating);
+            
+        function giveMeGreat(name,callback) {
+            return callback(name)
+        }
+        let result = giveMeGreat("Fariz", sayHi)
+        console.log(`result: ${result}`);
+    </script>
+</body>
+</html>

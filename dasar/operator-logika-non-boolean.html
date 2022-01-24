@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("info" || ""); // info => truty
+        console.log("" || "info"); // info => truty
+        console.log("" || []); // [] => truty
+        console.log("" || 0); // 0 => falsy, karena keduanya falsy, yang diambil yg paling kanan
+        
+        const person = {
+            firstName: "",
+            middleName: "Al",
+            lastName: "Farizzi"
+        };
+
+        // akan mengambil nilai truthy yang paling pertama didapatkan, jika tidak ada maka akan mengambil nilai paling ujung
+        const name = person.firstName || person.middleName ||person.lastName;
+        console.log(name);
+
+        // akan mengambil nilai falsy yang peling pertama didapat, jika semua truthy maka akan mengambil nilai paling ujung
+        const name2 = person.firstName && person.middleName && person.lastName;
+        console.log(name);
+
+   </script>
+</body>
+</html>

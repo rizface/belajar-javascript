@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            closure adalah kemampuan untuk membuat data pada local scope dapat diakses pada level global scope, jadi inti dari closure adalah mengekspos function pada local scope dengan membawa variable pendukung pada local scope yang sama didalamnya, keluar menuju global scope
+        */
+
+        function giveMeGreate() {
+            // greating adalah contoh  variable pendukung
+            let greating = "Selamat Malam";
+            // dibawah ini adalah closure
+            function concateWithName(...names) {
+                return `Halo ${names.join(",")} ${greating}`
+            }
+            return concateWithName
+        }
+        let greating = giveMeGreate()
+        console.log(greating("S", "Al", "Farizzi"));
+    </script>   
+</body>
+</html>

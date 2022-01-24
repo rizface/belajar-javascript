@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const names = ["Muhammad", "Al", "Farizzi", "Budiman", "Tomioka", "Ujang", "Samsul"]
+
+        // conventional
+        const firstName = names[0]
+        const middleName = names[1];
+        const lastName = names[3];
+
+        // destructuring
+        /*
+            desctructuring pada array tergantung dari posisi yang diletakan
+        */ 
+        const[firstName2,middleName2,lastName2, ...others] = names;
+        console.log(firstName2); // Muhammad
+        console.log(middleName2); // Al
+        console.log(lastName2); // Farizzi
+        console.log(others); // ["Budiman", "Tomioka", "Ujang", "Samsul"]
+
+        let lion = {
+            type: "Karnivora",
+            race: "Mamals",
+            habitat: {
+                country: "South Africa",
+                continent: "Africa"
+            },
+            familia: "cat",
+            favorite: "deer"
+        }
+        /*
+            desctructuring pada object nama variable harus sama
+        */
+        const {type:tipe,race,habitat:{country,continent},...othersInfo} = lion
+        console.log(tipe,race,country,continent);
+        console.log(othersInfo);
+
+        function extractAnimalInfo({type:tipe,race,habitat:{country,continent},color="yello",...othersInfo}) {
+            console.log("from lion");
+            console.log(tipe,race,country,continent);
+            console.log(color); // yellow
+            console.log(othersInfo);
+        }
+
+        function extractNames([firstName2,middleName2,lastName2,nickname="proamanda",...others]) {
+            console.log("from extract names");
+            console.log(firstName2); // Muhammad
+            console.log(middleName2); // Al
+            console.log(lastName2); // Farizzi
+            console.log(nickname); // proamanda
+            console.log(others); // ["Budiman", "Tomioka", "Ujang", "Samsul"]
+        }
+
+        extractAnimalInfo(lion)
+        extractNames(names)
+        extractNames(names.slice(0,1))
+    </script>
+</body>
+</html>

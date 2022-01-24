@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getName(name,callback) {
+            let result = callback(name);
+            return result;
+        }
+
+        // anonymous function
+        let upperName = getName("fariz",function(name) {
+            return name
+        })
+        console.log(upperName);
+
+        // anonymous function in parameter
+        let convertTuUpper = function(name) {
+            return name
+        }
+        let upperNameAgain = getName("ana",convertTuUpper)
+        console.log(upperNameAgain);
+   </script>
+</body>
+</html>

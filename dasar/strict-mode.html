@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            strict mode adalah mode javascript yang lebih ketat, saat menggunakan strict mode akan ada beberapa ketentuan
+            1. error yang tadinya silent error akan menjadi throw error
+            2. beberapa code akan ditolak seperti var,with, dan lain lain
+        */ 
+
+        function giveGreating(name) {
+            'use strict';
+            const person = {
+                firstName: "Fariz"
+            }
+            with(person) {
+                console.log();
+            }
+        }
+        console.log(giveGreating("Fariz"));
+    </script>
+</body>
+</html>
